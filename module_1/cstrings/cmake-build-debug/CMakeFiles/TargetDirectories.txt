@@ -1,0 +1,3 @@
+C:/Projects/GitHub/cpeg676/module_1/cstrings/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Projects/GitHub/cpeg676/module_1/cstrings/cmake-build-debug/CMakeFiles/cstrings.dir
+C:/Projects/GitHub/cpeg676/module_1/cstrings/cmake-build-debug/CMakeFiles/rebuild_cache.dir
