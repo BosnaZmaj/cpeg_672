@@ -1,2 +1,2 @@
-# cpeg_672
-UD cpeg672 course
+# cpeg_676
+UD CPEG 676 course
