@@ -8,9 +8,6 @@
 
 using namespace std;
 
-string decode(int key, string encrypted_text){
-
-}
 
 int main(){
     
@@ -31,4 +28,16 @@ int main(){
     encoded_file.close();
     
 }
+
+string decipher(int key, string encrypted_text){
+    
+    // setting alphabet
+    
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+    string decoded_text;
+    string letter;
+    
+    
+}
+
 
