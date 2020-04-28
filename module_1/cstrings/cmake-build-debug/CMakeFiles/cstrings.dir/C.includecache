@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Projects/GitHub/cpeg_676/module_1/cstrings/edited.c
+stdio.h
+C:/Projects/GitHub/cpeg_676/module_1/cstrings/stdio.h
+string.h
+C:/Projects/GitHub/cpeg_676/module_1/cstrings/string.h
+
