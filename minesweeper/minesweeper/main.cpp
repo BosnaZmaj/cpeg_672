@@ -121,7 +121,7 @@ void placeBombsOnBoard(gameBoard newGame[xBoardSize][yBoardSize], int bombs){
       int bombRowcoord = rand()%xBoardSize;
       int bombColumncoord = rand()%yBoardSize;
 
-      if (newGame[bombRowcoord][bombColumncoord].bombHere==false){
+      if (! newGame[bombRowcoord][bombColumncoord].bombHere){
         newGame[bombRowcoord][bombColumncoord].bombHere=true;
       }
       else{

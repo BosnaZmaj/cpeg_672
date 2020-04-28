@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Projects/GitHub/cpeg676/module_1/cstrings/edited.c" "C:/Projects/GitHub/cpeg676/module_1/cstrings/cmake-build-debug/CMakeFiles/cstrings.dir/edited.c.obj"
+  "C:/Projects/GitHub/cpeg_676/module_1/cstrings/edited.c" "C:/Projects/GitHub/cpeg_676/module_1/cstrings/cmake-build-debug/CMakeFiles/cstrings.dir/edited.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
