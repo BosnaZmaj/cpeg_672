@@ -33,7 +33,7 @@ public:
     bool selected_square;
     int neighbor_mine;
     
-    board(void ){
+    board(){
         bomb_is_here = false;
         bomb_marked_by_user = false;
         selected_square = false;
@@ -64,7 +64,7 @@ void display_game(board new_game[x_board_size][y_board_size]){
             
             }else if (new_game[row][column].bomb_is_here){
             
-                if (win_condition == true or loss_condition == true){
+                if (win_condition or loss_condition){
             
                     cout << "@|";
             
@@ -88,6 +88,48 @@ void display_game(board new_game[x_board_size][y_board_size]){
         }
         cout << "\n";
     }
-}
+};
 
+void end_of_game(board new_game[x_board_size][y_board_size]){
+    
+    for (int row = 0; row < y_board_size; row++){
+        
+        cout << "|";
+        
+        for (int column = 0; column< x_board_size; column++){
+            
+            if (new_game[row][column].bomb_is_here){
+                
+                cout << "@|";
+            }else{
+                
+                cout << "*|";
+            }
+        }
+        
+        cout << "\n";
+    }
+};
+
+
+void game_win(board new_game[x_board_size][y_board_size]){
+    
+    for (int row = 0; row < y_board_size; row++){
+        
+        cout << "|";
+        
+        for (int column = 0; column < x_board_size; column++){
+            
+            if (new_game[row][column].bomb_is_here) {
+    
+                cout << "@|";
+            } else{
+                
+                cout << "*|";
+            }
+        }
+        
+        cout << "\n";
+    }
+}
 
