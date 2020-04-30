@@ -1,12 +1,13 @@
 // Indy Subasic
 
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <math.h>
 #include <cstdlib>
-#include <time.h>
+#include <ctime>
+#include <random>
 
 
 using namespace std;
@@ -132,4 +133,29 @@ void game_win(board new_game[x_board_size][y_board_size]){
         cout << "\n";
     }
 }
+
+void bomb_placement(board new_game[x_board_size][y_board_size], int bomb){
+    
+    for (int i=0; i < bomb; i++){
+        
+        srand(time(nullptr));
+        
+        int bomb_row_placement = rand()%x_board_size;
+        int bomb_column_placement = rand()%y_board_size;
+        
+        if (!new_game[bomb_row_placement][bomb_column_placement].bomb_is_here){
+            
+            new_game[bomb_row_placement][bomb_column_placement].bomb_is_here=true;
+        }else{
+            
+            i--;
+        }
+    }
+};
+
+void place_marker(board new_game[x_board_size][y_board_size], int row, int column){
+    
+    new_game[row][column].bomb_marked_by_user=true;
+    
+};
 
