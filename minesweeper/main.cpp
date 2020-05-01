@@ -621,3 +621,26 @@ void clicked_square(board new_game[x_board_size][y_board_size], int row, int col
         }
     }
 }
+
+void review_win(board new_game[x_board_size][y_board_size]){
+    
+    int total = total_size_of_grid - number_of_bombs;
+    int win = 0;
+    
+    for (int y = 0; y < y_board_size; y++){
+        for (int x=0; x < x_board_size; x++){
+            if (new_game[y][x].selected_square && !new_game[y][x].bomb_location){
+                
+                win++;
+            }
+        }
+        
+        if (total == win){
+            
+            win_condition =true;
+            
+            cout << "WOW YOU HAVE NOT EXPLODED!!!!!!! GOOD JOB!!!!!!" << endl;
+        }
+    }
+};
+
