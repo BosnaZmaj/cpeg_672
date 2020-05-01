@@ -7,7 +7,7 @@
 #IncludeRegexTransform: 
 
 C:/Projects/GitHub/cpeg_676/minesweeper/main.cpp
-stdlib.h
+cstdlib
 -
 iostream
 -
@@ -17,6 +17,8 @@ math.h
 -
 cstdlib
 -
-time.h
+ctime
+-
+random
 -
 

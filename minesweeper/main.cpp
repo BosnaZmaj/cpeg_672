@@ -170,10 +170,10 @@ void clicked_square(board new_game[x_board_size][y_board_size], int row, int col
         end_of_game(new_game);
         
         cout << "BOOOOMMMM!!!!!!!!\n";
+        cout << "\n";
         cout << "SORRY, YOU LOST. PICK UP YOUR PIECES AND RESTART GAME TO PLAY AGAIN!!!\n";
         cout << endl;
     
-        int adjacent_mine_count = 0;
     
     }
     
@@ -184,7 +184,9 @@ void clicked_square(board new_game[x_board_size][y_board_size], int row, int col
             !new_game[row][column].bomb_marked_by_user;
         }
     
-        
+        int adjacent_mine_count = 0;
+    
+    
         if (row == 0 && column == 0){
         
             if (!new_game[row + 1][column].bomb_location){
@@ -644,3 +646,91 @@ void review_win(board new_game[x_board_size][y_board_size]){
     }
 };
 
+int main(){
+    
+    !loss_condition;
+    !win_condition;
+    
+    int choice;
+    int row;
+    int column;
+    
+    cout << "|------Minesweeper------|\n";
+    cout << "|                       |\n";
+    cout << "|                       |\n";
+    cout << "| Game Instructions     |\n";
+    cout << "|-----------------------|\n";
+    cout << "| @ = Bomb              |\n";
+    cout << "| ? = Maybe a Bomb      |\n";
+    cout << "| ! = Definitely a Bomb |\n";
+    cout << "| __ = No Bomb          |\n";
+    cout << "|-----------------------|\n";
+    cout << "\n";
+    
+    cout << "How many bombs would you like?\n";
+    cin >> number_of_bombs;
+    
+    while (number_of_bombs >= total_size_of_grid){
+        
+        cout << "Amount of mines must be between 1 and total size of grid" << total_size_of_grid << ": \n";
+        cin >> number_of_bombs;
+    }
+    
+    board new_game[x_board_size][y_board_size];
+    bomb_placement(new_game, number_of_bombs);
+    
+    while (!loss_condition && !win_condition){
+        display_game(new_game);
+        
+        cout << "------------Menu------------\n";
+        cout << "|     1 = Reveal Square    |\n";
+        cout << "|     2 = Mark Square      |\n";
+        cout << "----------------------------\n";
+        cout << "\n";
+        cin >> choice;
+        
+        if (choice == 1){
+            cout << "Row: ";
+            cin >> row;
+            cout << "\n";
+            
+            cout << "Column: ";
+            cin >> column;
+            cout << "\n";
+            
+            cout << "Revealed Squares: \n";
+            cout << "Row    Column\n";
+            cout << row  << column;
+            cout << "\n";
+            
+            clicked_square(new_game, row, column);
+            review_win(new_game);
+        }
+        
+        else if (choice == 2){
+            
+            display_game(new_game);
+            
+            cout << "Select Row: ";
+            cin >> row;
+            cout << "\n";
+            
+            cout << "Select Column: ";
+            cin >> column;
+            cout << "\n";
+            
+            cout << "Selected Squares: \n";
+            cout << "Row     Column\n";
+            cout << row << column;
+            cout << "\n";
+            
+            place_marker(new_game, row, column);
+            review_win(new_game);
+    }
+        else{
+        
+            cout << "Not cool dude! Where did I say you can make that choice?";
+            cout << "\n";
+        }
+    }
+}
